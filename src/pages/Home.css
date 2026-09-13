@@ -1,0 +1,162 @@
+.home-luxe {
+  padding-top: 80px; /* Offset for fixed header */
+}
+
+/* 1. Hero Section */
+.hero-editorial {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--spacing-8);
+  align-items: center;
+}
+
+.hero-pretitle {
+  color: var(--secondary);
+  margin-bottom: 24px;
+  display: block;
+}
+
+.hero-title {
+  margin-bottom: 32px;
+}
+
+.italic {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.hero-description {
+  max-width: 440px;
+  margin-bottom: 48px;
+  opacity: 0.95;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-image-overlay {
+  position: relative;
+  aspect-ratio: 4/5;
+  width: 100%;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editorial-caption {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  background: var(--surface-container-lowest);
+  padding: 32px 40px;
+  z-index: 10;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.04);
+}
+
+.editorial-caption h3 {
+  font-size: 1.25rem;
+  margin-top: 8px;
+}
+
+/* 2. Asymmetric Grid */
+.section-header-luxe {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-8);
+}
+
+.display-md {
+  font-size: 2.25rem;
+}
+
+.asymmetric-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+}
+
+.grid-col-small-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* 3. Quote Section */
+.quote-section {
+  background: var(--surface-container-low);
+  padding: var(--spacing-24) 0;
+  text-align: center;
+}
+
+.quote-content {
+  max-width: 800px;
+}
+
+.quote-label {
+  color: var(--secondary);
+  margin-bottom: 24px;
+  display: block;
+}
+
+.display-sm {
+  font-size: 1.75rem;
+  line-height: 1.4;
+}
+
+/* 4. Trending Section */
+.trending-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* 5. CTA Banner */
+.cta-banner-luxe {
+  padding: var(--spacing-16) 0;
+}
+
+.cta-inner-glass {
+  padding: var(--spacing-8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.cta-input-group {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+  .asymmetric-grid { grid-template-columns: 1fr; }
+  .trending-row { grid-template-columns: repeat(2, 1fr); }
+  .editorial-caption { position: relative; bottom: 0; right: 0; }
+}
+
+@media (max-width: 768px) {
+  .display-lg { font-size: 2.5rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .cta-input-group { flex-direction: column; }
+}

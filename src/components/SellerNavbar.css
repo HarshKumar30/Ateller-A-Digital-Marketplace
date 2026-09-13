@@ -1,0 +1,25 @@
+.seller-nav .seller-links {
+  gap: 32px;
+}
+
+.seller-link-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seller-shop-link {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .seller-nav .seller-links {
+    gap: 20px;
+  }
+  .seller-shop-link {
+    display: none;
+  }
+}

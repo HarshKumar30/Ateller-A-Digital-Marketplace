@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+/* ── Luxe Design Tokens ── */
+:root {
+  /* Light mode (default) */
+  --surface: #fcf9f8;
+  --on-background: #1c1b1b;
+  --secondary: #735c00;
+  --secondary-fixed-dim: #e9c349;
+  --surface-container-low: #f6f3f2;
+  --surface-container-lowest: #ffffff;
+  --surface-container-highest: #edeae9;
+  --outline-variant: #cdc6b3;
+  --error: #ba1a1a;
+  --glass-bg: rgba(252, 249, 248, 0.82);
+  --shadow-ambient: rgba(28, 27, 27, 0.06);
+
+  --font-display: 'Noto Serif', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  --radius: 0px; /* Sharp corners globally */
+
+  /* Spacing Scale */
+  --spacing-8: 2.75rem;
+  --spacing-16: 5.5rem;
+  --spacing-24: 8.5rem;
+
+  --transition: all 0.3s ease;
+}
+
+/* ── Dark Mode Tokens ── */
+[data-theme="dark"] {
+  --surface: #141312;
+  --on-background: #f2ede8;
+  --secondary: #e9c349;
+  --secondary-fixed-dim: #b39200;
+  --surface-container-low: #1e1c1b;
+  --surface-container-lowest: #0f0e0d;
+  --surface-container-highest: #2b2826;
+  --outline-variant: #67604e;
+  --error: #ffb4ab;
+  --glass-bg: rgba(20, 19, 18, 0.82);
+  --shadow-ambient: rgba(0, 0, 0, 0.35);
+}
+
+/* ── Theme Transition ── */
+:root {
+  color-scheme: light;
+}
+html {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--surface);
+  color: var(--on-background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, .display-font {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.noto-serif { font-family: var(--font-display); }
+.manrope { font-family: var(--font-body); }
+
+/* Editorial Headlines */
+.display-lg {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-8);
+}
+
+.body-md {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.label-md {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Utilities ── */
+.container {
+  max-width: 1440px; /* Editorial width */
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.vast-space {
+  padding-top: var(--spacing-16);
+  padding-bottom: var(--spacing-16);
+}
+
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+
+/* ── Components ── */
+
+/* Buttons: Luxe Editorial */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1.25rem 2.5rem; /* Large padding from spacing.5, spacing.10 approx */
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: var(--transition);
+  border-radius: var(--radius);
+}
+
+.btn-primary {
+  background: var(--on-background);
+  color: var(--surface);
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-fixed-dim) 100%);
+  color: var(--surface-container-lowest);
+}
+
+.btn-tertiary {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 0;
+  position: relative;
+}
+.btn-tertiary::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--secondary);
+  transform: scaleX(0.5);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.btn-tertiary:hover::after {
+  transform: scaleX(1);
+}
+
+/* No Borders Rule: Use surface shifts */
+.card {
+  background: var(--surface-container-lowest);
+  border: none;
+  box-shadow: none; /* Ambient shadows handled in CSS if needed */
+}
+
+/* Ambient Shadows for floating elements */
+.floating-element {
+  box-shadow: 0 24px 48px var(--shadow-ambient);
+}
+
+/* Product Image Container */
+.product-image-bg {
+  background: var(--surface-container-low);
+}
+
+/* Page transitions */
+.page-enter {
+  animation: luxeFade 0.6s ease both;
+}
+@keyframes luxeFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Forms ── */
+.input-minimal {
+  width: 100%;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--outline-variant);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--on-background);
+  outline: none;
+  transition: border-color 0.3s ease;
+  color-scheme: light;
+}
+.input-minimal::placeholder {
+  color: var(--on-background);
+  opacity: 0.45;
+}
+.input-minimal:focus {
+  border-bottom-color: var(--secondary);
+}
+[data-theme="dark"] .input-minimal {
+  color-scheme: dark;
+}
+select.input-minimal option {
+  background: var(--surface-container-lowest);
+  color: var(--on-background);
+}
+
+/* Toasts follow theme */
+.hot-toast {
+  background: var(--surface-container-lowest) !important;
+  color: var(--on-background) !important;
+  border: 1px solid var(--outline-variant) !important;
+}
+
+/* Visible keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+/* ── Glassmorphism ── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ── Theme Toggle Button ── */
+.theme-toggle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-background);
+  transition: var(--transition);
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  opacity: 0.7;
+}
+
+.theme-toggle .toggle-icon {
+  position: absolute;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+.theme-toggle .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+.theme-toggle .icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+[data-theme="dark"] .theme-toggle .icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}

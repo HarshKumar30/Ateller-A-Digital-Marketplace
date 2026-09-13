@@ -1,0 +1,176 @@
+.footer-luxe {
+  background: var(--on-background);
+  color: var(--surface);
+  padding: 120px 0 0 0;
+  margin-top: var(--spacing-24);
+}
+
+.footer-inner-luxe {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 80px;
+  padding-bottom: 80px;
+}
+
+.footer-logo-luxe .logo-text {
+  color: var(--surface);
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.footer-tagline-luxe {
+  opacity: 0.85;
+  max-width: 320px;
+  margin-bottom: 32px;
+}
+
+.footer-newsletter {
+  margin-bottom: 32px;
+  max-width: 340px;
+}
+
+.footer-newsletter .label-md {
+  display: block;
+  margin-bottom: 12px;
+  opacity: 0.75;
+}
+
+.footer-newsletter-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.footer-newsletter-input {
+  color: var(--surface);
+  border-bottom-color: var(--surface);
+}
+
+.footer-newsletter-input::placeholder {
+  color: var(--surface);
+  opacity: 0.55;
+}
+
+.footer-newsletter-input:focus {
+  border-bottom-color: var(--surface);
+}
+
+.footer-newsletter-btn {
+  padding: 0.8rem 1.4rem;
+  flex-shrink: 0;
+  background: var(--surface);
+  color: var(--on-background);
+}
+
+.footer-social-luxe {
+  display: flex;
+  gap: 16px;
+}
+
+.social-btn-luxe {
+  color: var(--surface);
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.social-btn-luxe:hover {
+  opacity: 1;
+  color: var(--secondary-fixed-dim);
+}
+
+.footer-links-luxe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.footer-col-luxe h4 {
+  margin-bottom: 32px;
+  opacity: 0.75;
+}
+
+.footer-link-luxe {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--surface);
+  opacity: 0.85;
+  margin-bottom: 12px;
+  transition: var(--transition);
+}
+
+.footer-link-luxe:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-contact:hover {
+  transform: none;
+}
+
+.footer-address {
+  line-height: 1.5;
+}
+
+.footer-address:hover {
+  transform: none;
+}
+
+.footer-note {
+  margin-top: 16px;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.footer-bottom-luxe {
+  border-top: 1px solid var(--outline-variant);
+  padding: 40px 0;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0.85;
+}
+
+.footer-payments {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pay-badge {
+  border: 1px solid var(--outline-variant);
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  opacity: 0.9;
+}
+
+.footer-crafted {
+  opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+  .footer-inner-luxe { grid-template-columns: 1fr; gap: 60px; }
+  .footer-links-luxe { grid-template-columns: repeat(2, 1fr); }
+}
+
+.seller-footer-inner {
+  padding-bottom: 56px;
+}
+
+@media (max-width: 768px) {
+  .footer-links-luxe { grid-template-columns: 1fr; }
+  .footer-newsletter-row { flex-direction: column; align-items: stretch; }
+}

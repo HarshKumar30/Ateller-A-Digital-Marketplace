@@ -1,0 +1,86 @@
+.seller-dash .seller-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.seller-form-card {
+  border: 1px solid var(--outline-variant);
+  padding: 32px;
+  margin-bottom: 56px;
+  background: var(--surface-container-lowest);
+}
+.seller-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 24px;
+  margin-top: 24px;
+}
+.seller-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.seller-span { grid-column: 1 / -1; }
+.seller-check { flex-direction: row !important; align-items: center; gap: 10px !important; }
+.seller-actions { display: flex; gap: 12px; }
+.seller-table-wrap { overflow-x: auto; margin-top: 20px; }
+.seller-table { width: 100%; border-collapse: collapse; }
+.seller-table th, .seller-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--outline-variant);
+}
+.seller-row-actions { display: flex; gap: 8px; }
+.seller-tabs {
+  display: flex;
+  gap: 28px;
+  border-bottom: 1px solid var(--outline-variant);
+  margin-bottom: 40px;
+}
+.seller-tab {
+  padding: 12px 0;
+  color: var(--on-background);
+  opacity: 0.6;
+  position: relative;
+}
+.seller-tab.active {
+  opacity: 1;
+}
+.seller-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--secondary);
+}
+.seller-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.seller-stat-card {
+  background: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.seller-orders-empty {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--surface-container-low);
+  padding: 48px;
+}
+@media (max-width: 720px) {
+  .seller-grid { grid-template-columns: 1fr; }
+  .seller-dash .seller-head { flex-direction: column; }
+  .seller-stats { grid-template-columns: 1fr 1fr; }
+}

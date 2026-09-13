@@ -1,0 +1,92 @@
+.profile-luxe {
+  padding-top: 120px;
+}
+
+.profile-header-luxe {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(205, 198, 179, 0.15);
+}
+
+.logout-btn-luxe {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--error);
+}
+
+.profile-layout-luxe {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 80px;
+  padding: 60px 0;
+}
+
+.user-info-card-luxe {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(205, 198, 179, 0.1);
+}
+
+.user-avatar-luxe {
+  width: 64px;
+  height: 64px;
+  background: var(--on-background);
+  color: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: var(--font-display);
+}
+
+.user-details-luxe h3 {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.profile-nav-luxe {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  color: var(--on-background);
+  opacity: 0.5;
+  transition: var(--transition);
+  text-align: left;
+}
+
+.profile-nav-btn:hover, .profile-nav-btn.active {
+  opacity: 1;
+  background: var(--surface-container-low);
+}
+
+.profile-nav-btn.active {
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.empty-profile-state {
+  padding: 100px 0;
+  text-align: center;
+  background: var(--surface-container-low);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .profile-layout-luxe { grid-template-columns: 1fr; }
+  .profile-header-luxe { flex-direction: column; align-items: flex-start; gap: 40px; }
+}
